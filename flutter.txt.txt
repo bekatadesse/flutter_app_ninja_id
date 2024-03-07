@@ -1,0 +1,52 @@
+ widget
+	text  widget
+	butten  widget
+	column  widget 
+
+dynamic variable = can be assigned
+
+Scaffold()
+
+statelesswidget     -- are static and immutable,
+
+stateful widget     -- dynamic and mutable
+
+
+@override       - use this will over ride any inheritance from the Statelesswidget
+
+
+image    - network image
+         - asset image
+
+Icon     - Icons.__
+ 	 - size
+	 -Colors.
+
+button    onPressed
+	 - style
+
+
+//child: IconButton(onPressed: (){}, icon: Icon(Icons.mail), color: Colors.green,),
+//child: ElevatedButton.icon(onPressed: () {},icon: Icon(Icons.mail), label: Text('mail'),),
+//child: ElevatedButton(onPressed: () {print('you clicked!!');}, child: Text('HOME', style: TextStyle(color: Colors.white,),),),),
+//child: Icon(Icons.account_tree,color: Colors.grey, size: 90.0,)
+//child: Image.asset('assets/pic-2.jpg',),
+//child: Image(image: AssetImage('assets/pic-3.jpg'),)
+//child: Image(image: NetworkImage('https://images.pexels.com/photos/20061968/pexels-photo-20061968/free-photo-of-young-woman-with-freckles-posing-with-peaches.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load')),
+
+//Text('This is home page',style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold,letterSpacing: 2.0, color: Colors.grey,fontFamily: 'Quicksand',)
+
+
+container       -padding
+		-margin
+		-color
+		-child
+
+
+row 		-main axis alignment     ______
+		-cross axis alignment   | 
+
+column          -MainAxisAlignment      |
+     		-CrossAxisAlignment     -------
+
+
