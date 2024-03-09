@@ -4,17 +4,37 @@ void main() {runApp(const MaterialApp(
   home: AppCard(),
 ));}
 
-class AppCard extends StatelessWidget {
+class AppCard extends StatefulWidget {
   const AppCard({super.key});
 
   @override
+  _AppCardState createState() => _AppCardState();
+}
+
+class _AppCardState extends State<AppCard> {
+  // data that change over time
+  //int ninjaLevel = 0;
+  int _ninjaLevel = 0; // Example mutable state
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.grey[850],
+    return Scaffold(
+      backgroundColor: Colors.grey[850],
       appBar: AppBar(
         title: const Text('AppCard'),
         centerTitle: true,
         backgroundColor: Colors.grey[800]
         ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            _ninjaLevel +=1;
+          });
+
+        },
+        backgroundColor: Colors.grey[800],
+        child: const Icon(Icons.add),
+      ),
       body: const Padding(
         padding: EdgeInsets.symmetric(vertical: 20,horizontal: 30),
         child: Column(
@@ -51,7 +71,8 @@ class AppCard extends StatelessWidget {
                 color: Colors.grey,
                 letterSpacing: 2.0,),),
 
-            Text('10',
+            Text(
+              '$_ninjaLevel',
               style: TextStyle(
                   color: Colors.yellow,
                   letterSpacing: 2.0,
@@ -79,4 +100,6 @@ class AppCard extends StatelessWidget {
   );
   }
 }
+
+
 
