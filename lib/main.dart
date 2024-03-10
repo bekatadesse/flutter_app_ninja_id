@@ -72,7 +72,7 @@ class _AppCardState extends State<AppCard> {
                 letterSpacing: 2.0,),),
 
             Text(
-              '$_ninjaLevel',
+              '$_ninjaLevzel',
               style: TextStyle(
                   color: Colors.yellow,
                   letterSpacing: 2.0,
