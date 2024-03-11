@@ -56,3 +56,22 @@ sizedBox
 CircleAvatar
 
 stfull ----stateful-widget
+
+        void main() {runApp(const MaterialApp(
+          home: AppCard(),
+        ));}
+
+        class AppCard extends StatefulWidget {
+          const AppCard({super.key});
+
+          @override
+          _AppCardState createState() => _AppCardState();
+        }
+
+        class _AppCardState extends State<AppCard> {
+          // data that change over time
+          int ninjaLevel = 0; // Example mutable state
+
+          @override
+          Widget build(BuildContext context) {
+            return Scaffold(
