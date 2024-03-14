@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 void main() {
   runApp(const MaterialApp(
     home: Quotelist(),
@@ -19,33 +20,6 @@ class _QuotelistState extends State<Quotelist> {
     Quote(author: 'oscar wilde' , text:'I have nothing to declare except my genius'),
     Quote(author: 'oscar wilde' , text:'The truth is rarely pure and never simple'),
   ];
-  Widget quoteTemplate(quote){
-    return Card(
-      margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              quote.text,
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.grey[600],
-              ),),
-            SizedBox(height: 6.0),
-
-            Text(
-              quote.author,
-              style: TextStyle(
-                fontSize: 14.0,
-                color: Colors.grey[800],
-              ),)
-          ],
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +31,14 @@ class _QuotelistState extends State<Quotelist> {
           backgroundColor: Colors.grey[500]
       ),
       body: Column(
-        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
+        children: quotes.map((quote) => QuoteCard(
+            quote: quote,
+            delete: (){
+              setState((){
+                quotes.remove(quote);
+              });
+          }
+        )).toList(),
       ),
       );
   }
